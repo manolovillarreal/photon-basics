@@ -28,6 +28,18 @@ public class PlayerAnimatorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // deal with Jumping
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        // only allow jumping if we are running.
+        if (stateInfo.IsName("Base Layer.Run"))
+        {
+            // When using trigger parameter
+            if (Input.GetButtonDown("Fire2"))
+            {
+                animator.SetTrigger("Jump");
+            }
+        }
+
         if (!animator)
         {
             return;

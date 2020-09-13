@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2304826786544799604}
   m_LocalRotation: {x: -0.5511755, y: 0.44295105, z: 0.5511755, w: 0.44295105}
-  m_LocalPosition: {x: -0.142, y: 0.432, z: -0.061}
-  m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 0.5}
+  m_LocalPosition: {x: -0.606, y: 2.538, z: -0.061}
+  m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 5}
   m_Children: []
   m_Father: {fileID: 7296832739624791250}
   m_RootOrder: 1
@@ -1421,9 +1421,12 @@ GameObject:
   - component: {fileID: 3636700455531411031}
   - component: {fileID: 3636700455538891191}
   - component: {fileID: 6527701457016483494}
+  - component: {fileID: 1179404478869951760}
   - component: {fileID: 1091600678042366072}
   - component: {fileID: 882165370}
   - component: {fileID: 882165371}
+  - component: {fileID: 6877998182796591494}
+  - component: {fileID: 4101378952241240849}
   m_Layer: 0
   m_Name: MyRobotKyle
   m_TagString: Untagged
@@ -1478,12 +1481,28 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.15
+  m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: -0.01}
+--- !u!114 &1179404478869951760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636700455531506295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c53594ff731ded4a8e442c0dff1d7c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1
+  PlayerUiPrefab: {fileID: 5289454161808303170, guid: 880eae62eea21f54f8481aec1425b8ba,
+    type: 3}
+  beams: {fileID: 7475009384507877581}
 --- !u!114 &1091600678042366072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,7 +1531,7 @@ MonoBehaviour:
   distance: 7
   height: 3
   centerOffset: {x: 0, y: 1, z: 0}
-  followOnStart: 1
+  followOnStart: 0
   smoothSpeed: 0.125
 --- !u!114 &882165371
 MonoBehaviour:
@@ -1532,10 +1551,58 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
-  viewIdField: 1
+  ObservedComponents:
+  - {fileID: 1179404478869951760}
+  - {fileID: 6877998182796591494}
+  - {fileID: 4101378952241240849}
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &6877998182796591494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636700455531506295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &4101378952241240849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636700455531506295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Speed
+  - Type: 1
+    SynchronizeType: 1
+    Name: Direction
+  - Type: 4
+    SynchronizeType: 0
+    Name: Hi
+  - Type: 9
+    SynchronizeType: 0
+    Name: Jump
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &3636700455531506297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,8 +1948,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7310035462406840614}
   m_LocalRotation: {x: -0.5511755, y: 0.44295105, z: 0.5511755, w: 0.44295105}
-  m_LocalPosition: {x: -0.14200002, y: 0.43200013, z: 0.059999995}
-  m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 0.5}
+  m_LocalPosition: {x: -0.60600024, y: 2.538, z: 0.059999995}
+  m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 5}
   m_Children: []
   m_Father: {fileID: 7296832739624791250}
   m_RootOrder: 0
@@ -1945,8 +2012,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14, y: 1, z: 1}
-  m_Center: {x: 6, y: 0, z: 0}
+  m_Size: {x: 14, y: 1, z: 0.95}
+  m_Center: {x: 6, y: 0, z: 0.03}
 --- !u!1 &7475009384507877581
 GameObject:
   m_ObjectHideFlags: 0
